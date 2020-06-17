@@ -1,4 +1,4 @@
-# Desafio Final Central de Erros - backend
+# Desafio Final Central de Erros - Frontend
 
 Descrição...
 
