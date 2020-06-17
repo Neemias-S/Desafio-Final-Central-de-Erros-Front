@@ -1,0 +1,111 @@
+<!-- Menu -->
+<div class="d-flex justify-content-between align-items-center p-2 border mx-auto my-5 header">
+
+    <div class="d-flex">
+
+        <!-- DropDown -->
+        <div ngbDropdown class="d-inline-block dropdown mr-2">
+            <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>{{selectedEnvironment}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button *ngFor="let enviroment of enviroments" (click)="this.selectedEnvironment = enviroment"
+                    ngbDropdownItem>{{enviroment}}
+                </button>
+            </div>
+        </div>
+
+        <!-- Order -->
+        <div>
+            <div ngbDropdown class="d-inline-block dropdown mr-2">
+                <button class="btn btn-outline-dark" id="dropdownBasic2" ngbDropdownToggle>{{selectedLevel}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                    <button *ngFor="let level of levels" (click)="this.selectedLevel = level" ngbDropdownItem>{{level}}
+                    </button>
+                </div>
+            </div>
+
+            <button class="btn btn-outline-dark mr-2">
+                <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+            </button>
+
+            <button class="btn btn-outline-dark">
+                <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Searchbar -->
+    <div class="input-group" style="width: fit-content;">
+
+
+        <div class="d-flex px-2">
+            <!-- Archive -->
+            <div class="mr-2">
+                <button class="btn btn-outline-dark">
+                    <i class="fa fa-archive" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Delete -->
+            <div>
+                <button class="btn btn-outline-dark">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="input-group-prepend">
+            <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+        </div>
+        <input type="text" class="form-control">
+        <div class="input-group-append">
+            <span class="input-group-text">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<!-- Body -->
+<div class="d-flex flex-wrap mb-5 padding-correction">
+
+    <div (click)="open()" class="card m-2 align-items-start flex-column card-cronograma" *ngFor="let log of logs">
+
+        <div  class="card-header w-100 justify-content-between align-items-center d-flex">
+
+            <span>{{log?.origin }}</span>
+
+            <div>
+                <span>{{log?.occurrencies }}</span>
+                <span class="ml-2" title="{{log.level |titlecase}}">
+                    <i *ngIf="log.level == 'warning'" class="fa fa-exclamation-triangle text-warning"
+                        aria-hidden="true"></i>
+                    <i *ngIf="log.level == 'debug'" class="fa fa-bug text-info" aria-hidden="true"></i>
+                    <i *ngIf="log.level == 'error' " class="fa fa-exclamation-circle text-danger"
+                        aria-hidden="true"></i>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="card-body justify-content-center align-items-center d-flex flex-wrap">
+
+            <div class="">
+                <small>{{log.description}}</small>
+            </div>
+
+            <div class="p-1">
+                <span>
+                    {{log?.timestamp | date:"dd/MM/yyyy"}}
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

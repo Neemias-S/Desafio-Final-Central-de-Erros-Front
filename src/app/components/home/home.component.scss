@@ -1,0 +1,49 @@
+
+// Fonts
+@font-face {
+    font-family: "mont";
+    src: url("../../../assets/fonts/montserrat-light-webfont.woff") format("opentype");
+  }
+
+
+// Variabeles
+
+$black : #000;
+$corenBlue : blue;
+$white : #FFF;
+.padding-correction:not(#not-found){
+    padding-left: 5.2vw;
+}
+
+*:not(i){
+
+    font-family: 'mont';
+
+
+}
+
+.card-cronograma{
+
+    font-size: medium;
+    width: 21vw;
+    height: 13rem;
+    color: $black;
+    &:hover{
+        background-color: darken($white, 30%);
+        color: $white;
+        cursor: pointer;  
+    }
+    
+}
+
+.header{
+    width:  calc(100vw - (80vw * 0.16));
+}
+
+#dropdownBasic1{
+    min-width: 9.5rem;
+}
+
+#dropdownBasic2{
+    min-width: 7.5rem;
+}
