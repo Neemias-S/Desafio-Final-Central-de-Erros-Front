@@ -1,6 +1,6 @@
 # Desafio Final Central de Erros - Frontend
 
-Descrição...
+Este projeto foi desenvolvido utilizando o framework Angular 9.0, o objetivo era dar uma melhor apresentação ao nosso Projeto Final desenvolvido em Java.
 
 **Equipe backend**
 * Alexandre Silva Simedo Pacheco [Linkedin](https://linkedin.com) | [GitHub](https://github.com)
