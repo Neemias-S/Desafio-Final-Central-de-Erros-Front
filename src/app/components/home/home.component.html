@@ -4,7 +4,7 @@
     <div class="d-flex">
 
         <!-- DropDown -->
-        <div ngbDropdown class="d-inline-block dropdown mr-2">
+        <div title="Ambiente" ngbDropdown class="d-inline-block dropdown mr-2">
             <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>{{selectedEnvironment}}</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button *ngFor="let enviroment of enviroments" (click)="this.selectedEnvironment = enviroment"
@@ -15,7 +15,8 @@
 
         <!-- Order -->
         <div>
-            <div ngbDropdown class="d-inline-block dropdown mr-2">
+
+            <div title="Ordenar Por" ngbDropdown class="d-inline-block dropdown mr-2">
                 <button class="btn btn-outline-dark" id="dropdownBasic2" ngbDropdownToggle>{{selectedLevel}}</button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
                     <button *ngFor="let level of levels" (click)="this.selectedLevel = level" ngbDropdownItem>{{level}}
@@ -23,11 +24,13 @@
                 </div>
             </div>
 
-            <button class="btn btn-outline-dark mr-2">
+            <!-- Sort Asc -->
+            <button title="Ordem Ascendente" class="btn btn-outline-dark mr-2">
                 <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
             </button>
 
-            <button class="btn btn-outline-dark">
+            <!-- Sort Desc -->
+            <button title="Ordem Decrescente" class="btn btn-outline-dark">
                 <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
             </button>
 
@@ -38,7 +41,7 @@
     <div class="input-group" style="width: fit-content;">
 
 
-        <div class="d-flex px-2">
+        <div title="Arquivar Log" class="d-flex px-2">
             <!-- Archive -->
             <div class="mr-2">
                 <button class="btn btn-outline-dark">
@@ -47,7 +50,7 @@
             </div>
 
             <!-- Delete -->
-            <div>
+            <div title="Deletar Log" >
                 <button class="btn btn-outline-dark">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                 </button>
@@ -73,15 +76,15 @@
 <!-- Body -->
 <div class="d-flex flex-wrap mb-5 padding-correction flex-wrap">
 
-    <div (click)="open()" class="card m-2 flex-wrap align-items-start flex-column card-cronograma" *ngFor="let log of logs">
+    <div (click)="open(log)" class="card m-2 flex-wrap align-items-start flex-column card-cronograma" *ngFor="let log of logs">
 
         <!-- Card Header -->
         <div  class="card-header w-100 flex-wrap justify-content-between align-items-center d-flex">
 
-            <span>{{log?.origin }}</span>
+            <span title="Origem" >{{log?.origin }}</span>
 
             <div>
-                <span>{{log?.occurrencies }}</span>
+                <span title="Ocorrências" >{{log?.occurrencies }}</span>
                 <span class="ml-2" title="{{log.level |titlecase}}">
                     <i *ngIf="log.level == 'warning'" class="fa fa-exclamation-triangle text-warning"
                         aria-hidden="true"></i>
@@ -97,11 +100,11 @@
         <div class="card-body justify-content-center align-items-center d-flex flex-wrap">
 
             <div class="justify-content-center">
-                <small>{{log.description}}</small>
+                <small title="Descrição" >{{log.description}}</small>
             </div>
 
             <div class="p-1">
-                <span>
+                <span title="Timestamp" >
                     {{log?.timestamp | date:"dd/MM/yyyy"}}
                 </span>
             </div>

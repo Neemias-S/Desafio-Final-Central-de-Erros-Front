@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
 
+  // Mocking
   selectedEnvironment = "Produção";
 
   selectedLevel = "All";
@@ -146,10 +147,13 @@ export class HomeComponent implements OnInit {
   }];
   closeResult = '';
 
-  open() {
+  open(log) {
+
+    localStorage.setItem("selectedLog", JSON.stringify(log))
+
     let modalConfig = new NgbModalConfig(); 
     modalConfig.centered = true;
-    
+
     const modalRef = this.modalService.open(LogModalComponent, modalConfig);
     modalRef.componentInstance.name = 'World';
   }
