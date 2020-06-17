@@ -9,14 +9,9 @@ Este projeto foi desenvolvido utilizando o framework Angular 9.0, o objetivo era
 * Neemias da Silva Souza [Linkedin](https://linkedin.com) | [GitHub](https://github.com/Neemias-S)
 * Márcio Rafael Lisboa Resende [Linkedin](https://linkedin.com) | [GitHub](https://github.com)
 
-
-## Stories do usuário
-[planilha](https://docs.google.com/spreadsheets/d/1uAfXOJKlHbWOtik5yWVzqu_JeFT1DIN1sJ4ihf19YlM/edit#gid=0)
-
-
 ## Instruções para rodar o projeto:
 
-Para os passos a seguir é necessário a configuração prévia do Backend, se ainda não executou essa parte acesse o link do <a href="https://github.com/Codenation-Squad3/Desafio-Final-Central-de-Erros" target="_blank" >repositório</a> acima e consulte o README do repositório.
+Lembrando que o Backend deve estar corretamente configurado para que o frontend funcione corretamente. <a href="https://github.com/Codenation-Squad3/Desafio-Final-Central-de-Erros" target="_blank" >Repositório Backend</a>
 
  1 : Caso não tenha o Node Js instalado, acesse o <a href="https://nodejs.org/en/download/" target="_blank"> link </a> e faça o download apropriado para o seu SO.
 
