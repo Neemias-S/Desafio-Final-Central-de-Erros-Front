@@ -71,11 +71,12 @@
 </div>
 
 <!-- Body -->
-<div class="d-flex flex-wrap mb-5 padding-correction">
+<div class="d-flex flex-wrap mb-5 padding-correction flex-wrap">
 
-    <div (click)="open()" class="card m-2 align-items-start flex-column card-cronograma" *ngFor="let log of logs">
+    <div (click)="open()" class="card m-2 flex-wrap align-items-start flex-column card-cronograma" *ngFor="let log of logs">
 
-        <div  class="card-header w-100 justify-content-between align-items-center d-flex">
+        <!-- Card Header -->
+        <div  class="card-header w-100 flex-wrap justify-content-between align-items-center d-flex">
 
             <span>{{log?.origin }}</span>
 
@@ -92,9 +93,10 @@
 
         </div>
 
+        <!-- Card Body -->
         <div class="card-body justify-content-center align-items-center d-flex flex-wrap">
 
-            <div class="">
+            <div class="justify-content-center">
                 <small>{{log.description}}</small>
             </div>
 
