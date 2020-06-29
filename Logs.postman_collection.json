@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "9396250b-15c4-4c1f-abb3-5f0a2bcf67c5",
+		"name": "Logs",
+		"description": "End points referentes a entidade Log",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAll/{ambiente}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWVtaWFzLnNvdXphIiwiZXhwIjoxNTkyMjczMTc1fQ.A72h3WUUO0h5nSVhWiK0DzlvAYsMeyKDCvBrahYGdX5KGBaOc0NTEjDTBKIigvK6l2AhA-oUdgkqAjzlIXC7xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/logs/producao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"producao"
+					]
+				},
+				"description": "Retorna todos os logs do ambiente parametrizado"
+			},
+			"response": []
+		},
+		{
+			"name": "order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderBy\" : \"level || descricao || origem || default\",\r\n    \"sort\" :\"ASC || DESC\",\r\n    \"ambiente\" : \"prod || dev || test\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/logs/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"order"
+					]
+				},
+				"description": "Retorna a lista de Logs ordenada de a cordo com os parâmetros no body"
+			},
+			"response": []
+		},
+		{
+			"name": "delete/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/logs/delete/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"delete",
+						"{id}"
+					]
+				},
+				"description": "Deleta o log do id parametrizadao"
+			},
+			"response": []
+		},
+		{
+			"name": "archive/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/logs/archive/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"archive",
+						"{id}"
+					]
+				},
+				"description": "Arquiva o Log de id parametrizado"
+			},
+			"response": []
+		},
+		{
+			"name": "serach",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": null,\r\n\t\"title\" : \"Not Foud Exception\",\r\n\t\"description\" :  \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\r\n\t\"occurrencies\" : 3,\r\n\t\"timestamp\" : \"Mon Jun 15 2020 22:09:26 GMT-0300\",\r\n\t\"environment\" : \"development\",\r\n\t\"origin\" : \"128.168.5.1\",\r\n\t\"level\": \"warning\",\r\n\t\"user\" : {\r\n\t\t\"name\" : \"Carlos Souza\",\r\n\t\t\"email\" : \"carlos@gmail.com\" ,\r\n\t\t\"token\" : \"gwam4fuu5zcmxcchc44ac9r3e\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "Pesquisa com base no objeto de exemplo parametrizado no body"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

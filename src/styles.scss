@@ -2,3 +2,24 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+// Fonts
+@font-face {
+    font-family: "mont";
+    src: url("./assets/fonts/montserrat-light-webfont.woff") format("opentype");
+  }
+
+$dark : #242424 ;
+$light : #FFF;
+
+
+
+*:not(i, ngb-modal-window, ngb-modal-backdrop){
+    background-color:$dark;
+    color: $light;
+    font-family: 'mont';
+}
+
+body{
+    background-color:$dark!important;
+}

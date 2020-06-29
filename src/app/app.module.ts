@@ -7,9 +7,9 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 
 import { LogosComponent } from './components/logos/logos.component';
 import { HomeComponent } from './components/home/home.component';
-import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LogModalComponent } from './components/log-modal/log-modal.component'
+import { LogModalComponent } from './components/log-modal/log-modal.component';
+import { NavbarComponent } from './components/navbar/navbar.component'
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { LogModalComponent } from './components/log-modal/log-modal.component'
     AuthenticationComponent,
     LogosComponent,
     HomeComponent,
-    CadastrarComponent,
-    LogModalComponent
+    LogModalComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

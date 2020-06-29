@@ -1,34 +1,3 @@
-import { User } from './../../models/User';
-import { Log } from '../../models/Log';
-import { Component, OnInit } from '@angular/core';
-import { NgbModal , NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
-import { LogModalComponent } from '../log-modal/log-modal.component';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
-})
-export class HomeComponent implements OnInit {
-
-  constructor(private modalService: NgbModal) { }
-
-  
-  ngOnInit(): void {
-    localStorage.setItem("user", JSON.stringify(this.user));
-  }
-
-
-  // Mocking
-  user = new User("Neemias Souza","neesspro@gmail.com", "gwam4fuu5zcmxcchc44ac9r3e", "EncryptedPassword");
-
-  selectedEnvironment = "Produção";
-
-  selectedLevel = "All";
-
-  enviroments = [ "Produção" , "Development", "Test" ];
-  levels = ["All" ,"Level" , "Descrição", "Origem"];
-  logs : Array<Log> = [
     {
       "id"  : null,
       "title" : "404 Not Found",
@@ -424,7 +393,7 @@ export class HomeComponent implements OnInit {
 	}
   ],
   "lastOccurrence" : new Date(),
-  "level": "Error"
+  "level": "Warning"
   },
 	  {
   "id"  : null,
@@ -577,7 +546,7 @@ export class HomeComponent implements OnInit {
 	}
   ],
   "lastOccurrence" : new Date(),
-  "level": "Error"
+  "level": "Debug"
   },
 	  {
   "id"  : null,
@@ -640,7 +609,7 @@ export class HomeComponent implements OnInit {
 	}
   ],
   "lastOccurrence" : new Date(),
-  "level": "Debug"
+  "level": "Warning"
   },
   
 	  {
@@ -1562,19 +1531,3 @@ export class HomeComponent implements OnInit {
       }
 
 
-
-  ];
-  closeResult = '';
-
-  open(log) {
-
-    localStorage.setItem("selectedLog", JSON.stringify(log))
-
-    let modalConfig = new NgbModalConfig(); 
-    modalConfig.centered = true;
-
-    const modalRef = this.modalService.open(LogModalComponent, modalConfig);
-    modalRef.componentInstance.name = 'World';
-  }
-
-}

@@ -1,24 +1,24 @@
 <div class="d-flex" >
 
-    <div class="card" >
+    <div class="card border-light" >
 
-        <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="card-header border-light d-flex justify-content-between align-items-center">
             
             <!-- Title/Timestamp -->
             <div>
                 <span title="Origem" > {{log.origin}} </span>
                 -
-                <span title="Timestamp" > {{log.timestamp | date: 'dd/MM/yyyy h:mm a' :'BRL'}} </span>
+                <span title="Timestamp" > {{log.lastOccurrence | date: 'dd/MM/yyyy h:mm a' :'BRL'}} </span>
             </div>
 
             <!-- Ocurrencies/Level -->
             <div>
-                <span title="Ocorrências" >{{log?.occurrencies }}</span>
+                <span title="Ocorrências" >{{log?.occurrences.length }}</span>
                 <span class="ml-2" title="{{log.level |titlecase}}">
-                    <i *ngIf="log.level == 'warning'" class="fa fa-exclamation-triangle text-warning"
+                    <i *ngIf="log.level.toLowerCase() == 'warning'" class="fa fa-exclamation-triangle text-warning"
                         aria-hidden="true"></i>
-                    <i *ngIf="log.level == 'debug'" class="fa fa-bug text-info" aria-hidden="true"></i>
-                    <i *ngIf="log.level == 'error' " class="fa fa-exclamation-circle text-danger"
+                    <i *ngIf="log.level.toLowerCase() == 'debug'" class="fa fa-bug text-info" aria-hidden="true"></i>
+                    <i *ngIf="log.level.toLowerCase() == 'error' " class="fa fa-exclamation-circle text-danger"
                         aria-hidden="true"></i>
                 </span>
             </div>
@@ -32,9 +32,9 @@
 
         <!-- Token do usuário -->
         <div class="card-footer d-flex justify-content-between align-items-center">
-            <div title="Token de {{log.user.name}}">
+            <div title="Token de {{log.occurrences[0].user.name}}">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                <span class="mt-2 ml-2" >{{log.user.token}}</span>
+                <span class="mt-2 ml-2" >{{log.occurrences[0].user.name}}</span>
             </div>
         </div>
 
