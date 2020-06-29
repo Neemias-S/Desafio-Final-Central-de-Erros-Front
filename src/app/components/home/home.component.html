@@ -11,7 +11,7 @@
         <div title="Ambiente" ngbDropdown class="d-inline-block dropdown mr-2">
             <button class="btn btn-outline-light" id="enviroment" ngbDropdownToggle>{{selectedEnvironment}}</button>
             <div ngbDropdownMenu>
-                <button *ngFor="let enviroment of enviroments" (click)="this.selectedEnvironment = enviroment"
+                <button class="dropdown-item" *ngFor="let enviroment of enviroments" (click)="this.selectedEnvironment = enviroment"
                     ngbDropdownItem>{{enviroment}}
                 </button>
             </div>

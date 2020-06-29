@@ -5,22 +5,16 @@
   }
 
 // Variabeles
-$black : #000;
-$corenBlue : blue;
 $light : #FFF;
+$dark : #242424!important;
 
 .padding-correction:not(#not-found){ padding: 1rem 5rem; }
 .header{ width:  calc(100vw - (80vw * 0.16)); }
 
-*:not(i){ 
-    color: $light;
-    font-family: 'mont';
- }
-
-$dark : #242424!important;
-$light: #FFF;
+*:not(i){ font-family: 'mont'; }
 
 .card{
+    color: $light;
     font-size: medium;
     width: 19.6vw;
     min-width: 16.6rem;
@@ -36,6 +30,14 @@ $light: #FFF;
 }
 
 .dropdown{
+  
+    &.dropdown-item{
+        color: $dark!important;
+        &:hover{
+            background-color: darken(#FFF, 30%);
+        }
+    }
+
     #enviroment{ min-width: 9.5rem; }
     #level{ min-width: 7.5rem; }
 }
