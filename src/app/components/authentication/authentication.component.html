@@ -7,12 +7,31 @@
 
     <!-- Login  Componentizar depois-->
     <div class="d-flex side justify-content-center align-items-center register" >
-        
+
         <div class="d-flex flex-column px-4 pb-5 align-items-center justify-content-center ">
             <span class="pb-2">Central de Erros</span>
-            <input type="email" class="mb-2">
-            <input type="text" class="mb-2">
-            <div class="btn btn-outline-dark w-100" routerLink="home" >Login</div>
+            <form [formGroup]="loginForm" class="mx-auto">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="example@mail.com"
+                  formControlName="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Senha</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+              </div>
+              <button class="btn btn-outline-dark w-100" [disabled]="!loginForm.valid"  (click)="login()">
+                Login
+              </button>
+            </form>
         </div>
 
     </div>
