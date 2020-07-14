@@ -2,6 +2,8 @@
 
 Este projeto foi desenvolvido utilizando o framework Angular 9.0, o objetivo era dar uma melhor apresentação ao nosso Projeto Final desenvolvido em Java.
 
+Wireframe do projeto : <a href="https://www.figma.com/proto/UHT7ovuTYnRYAykaZrW0VT/CetralDeErros?node-id=107%3A2&scaling=min-zoom" target="_blank">Prototipo no Figma</a>
+
 **Equipe backend**
 * Alexandre Silva Simedo Pacheco [Linkedin](https://linkedin.com) | [GitHub](https://github.com)
 * Danilo Wilson Soares da Silva [Linkedin](https://linkedin.com) | [GitHub](https://github.com)
